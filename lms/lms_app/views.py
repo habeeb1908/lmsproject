@@ -1,6 +1,18 @@
 from django.shortcuts import render
+from.models import *
 
 # Create your views here.
 
-def demo(request):
-    return render(request,'pages/update.html') 
+def index(request):
+    context={
+        'category': Category.objects.all(),
+        'books':Book.objects.all(),
+
+
+    }
+    
+    return render(request,'pages/index.html',context) 
+
+def books(request):
+    return render(request,'pages/books.html') 
+
