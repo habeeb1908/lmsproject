@@ -145,8 +145,11 @@
                 <!-- Button trigger modal -->
                   </div>
                 </div>
-
-                <div style="background: url({{book.photo_book.url}}); background-size: cover; " class="widget-user-header bg-warning">
+                {% if book.photo_book%}
+                  <div style="background: url({{book.photo_book.url}}); background-size: cover; " class="widget-user-header bg-warning">
+                {% else %}
+                   <div   class="widget-user-header bg-warning">  
+                {% endif%}       
                   <h3 class="widget-user-username">{{book.title}}</h3>
                   <h5 class="widget-user-desc">{{book.outher}}</h5>
                 </div>
